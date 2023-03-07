@@ -10,6 +10,10 @@ On peut le trouver à cette adresse:
 
 https://symfony.com/download
 
+Il faut l'installer soit avec le fichier binaire, soit  scoop,  soit avec composer :
+
+https://symfony.com/doc/5.4/setup.html
+
 ### Environnement
 
 Après installation et vérification que PHP 8.* est activé en tappant cette commande dans un bash (voir ajouter PHP dans les variables d'environnement) :
@@ -52,3 +56,10 @@ L'adresse devrait ressembler à celle-ci :
 
 https://127.0.0.1:8000/
 
+Pour la sécurité il est toujours intéressant de la tester avec un :
+
+    symfony check:security
+
+        et / ou un
+
+    composer update
