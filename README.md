@@ -16,6 +16,10 @@ Après installation et vérification que PHP 8.* est activé en tappant cette co
 
     php -v
 
+Il faut vérifier également la présence de composer qui se trouve à cette adresse :
+
+https://getcomposer.org/download/
+
 On va vérifier qu'on a tout ce qu'il nous faut pour travailler :
 
     symfony check:requirements
@@ -30,5 +34,21 @@ Pour le moment il s'agit de la version 5.4.* maintenue jusque fin 2026
 
 Pour créer le projet :
 
-    symfony new SymfonyProject --version=lts
-    
+    symfony new NomDuProjet --version=lts --webapp
+
+puis accédez au dossier
+
+    cd NomDuProjet
+
+Dupliquez `.env` que vous renommez en `.env.local`, puis supprimez la APP_SECRET de `.env` (pas d'envoi via git)
+
+### Lancement du serveur
+
+Dans le dossier du projet :
+
+    symfony server:start -d
+
+L'adresse devrait ressembler à celle-ci :
+
+https://127.0.0.1:8000/
+
