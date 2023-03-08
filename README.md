@@ -7,6 +7,7 @@
     * [Création du projet](#création-du-projet)
 * [Lancement du serveur](#lancement-du-serveur)
 * [Vue sur les makers](#vue-sur-les-makers)
+    * [Création d'un contrôleur](#création-dun-contrôleur)
 
 ## Installation
 
@@ -102,5 +103,52 @@ Pour voir toutes les commandes dipsonibles depuis la console :
     php bin/console
     # ou
     symfony console
+
+* [Retour au menu](#menu)
+
+### Création d'un contrôleur
+
+Nous allons créer notre premier contrôleur avec maker en le nommant HomeController :
+
+    symfony console make:controller
+
+    # ou 
+
+    php bin/console make:controller
+
+2 fichiers sont créés, le premier dans les contrôleurs, le deuxième dans les templates (vues) :
+
+    created: src/Controller/HomeController.php
+    created: templates/home/index.html.twig
+
+Le contrôleur créé rajoute un chemin vers `/home` et appel une vue en `twig` :
+
+```php
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class HomeController extends AbstractController
+{
+    #[Route('/home', name: 'app_home')]
+    public function index(): Response
+    {
+        return $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+}
+```
+
+On va changer la route pour que ça soit notre page d'accueil via l'attribut (depuis PHP 8) :
+
+    #[Route('/', name: 'app_home')]
+
+https://127.0.0.1:8000/
+
 
 * [Retour au menu](#menu)
