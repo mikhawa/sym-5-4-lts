@@ -8,6 +8,8 @@
 * [Lancement du serveur](#lancement-du-serveur)
 * [Vue sur les makers](#vue-sur-les-makers)
     * [Création d'un contrôleur](#création-dun-contrôleur)
+        * [Méthode du contrôleur](#méthode-dun-contrôleur)
+        * [Méthode pour afficher les routes](#méthode-pour-afficher-les-routes)
 
 ## Installation
 
@@ -108,12 +110,10 @@ Pour voir toutes les commandes dipsonibles depuis la console :
 
 ### Création d'un contrôleur
 
-Nous allons créer notre premier contrôleur avec maker en le nommant HomeController :
+Nous allons créer notre premier contrôleur avec maker en le nommant `HomeController` :
 
     symfony console make:controller
-
     # ou 
-
     php bin/console make:controller
 
 2 fichiers sont créés, le premier dans les contrôleurs, le deuxième dans les templates (vues) :
@@ -146,9 +146,43 @@ class HomeController extends AbstractController
 
 On va changer la route pour que ça soit notre page d'accueil via l'attribut (depuis PHP 8) :
 
-    #[Route('/', name: 'app_home')]
+    #[Route('/', name: 'homepage')]
 
 https://127.0.0.1:8000/
 
+* [Retour au menu](#menu)
+
+#### Méthode d'un contrôleur
+
+On se rend alors qu'on peut créer de la même manière d'autres méthodes pour `HomeController` et de créer un route :
+
+```php
+<?php
+
+...
+# on veut récupérer une requête
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+
+class HomeController extends AbstractController
+{
+    ...
+    // nouvelle méthode vers l'URL page1
+    #[Route('/page1', name: 'pageUne')]
+    public function pageUne(Request $request): Response
+    {
+        # envoi d'une réponse de type var_dump() avec dump()
+        return new Response("<pre>".dump($request)."<pre>");
+    }
+}
+```
+
+* [Retour au menu](#menu)
+
+#### Méthode pour afficher les routes
+
+Dans la console
+
+    php bin/console debug:router
 
 * [Retour au menu](#menu)
