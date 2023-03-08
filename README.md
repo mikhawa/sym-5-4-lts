@@ -5,6 +5,8 @@
     * [Chargement du fichier binaire](#chargement-du-fichier-binaire)
     * [Environnement](#environnement)
     * [Création du projet](#création-du-projet)
+* [Lancement du serveur](#lancement-du-serveur)
+* [Vue sur les makers](#vue-sur-les-makers)
 
 ## Installation
 
@@ -93,6 +95,12 @@ Pour afficher les makers de base :
     # ou
     symfony console list make
 
-Ils permettent d'exécuter des commandes rapidement
+Ils permettent d'exécuter des commandes rapidement. Il peut y avoir plus de maker suivant les projets.
+
+Pour voir toutes les commandes dipsonibles depuis la console :
+
+    php bin/console
+    # ou
+    symfony console
 
 * [Retour au menu](#menu)
