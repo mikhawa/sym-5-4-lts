@@ -1,5 +1,6 @@
 # sym-5-4-lts
 
+## Menu
 * [Installation](#installation)
     * [Chargement du fichier binaire](#chargement-du-fichier-binaire)
     * [Environnement](#environnement)
@@ -33,6 +34,8 @@ On va vérifier qu'on a tout ce qu'il nous faut pour travailler :
 
     symfony check:requirements
 
+* [Retour au menu](#menu)
+
 ### Création du projet
 
 On va regarder sur le site de Symfony le `Long-Term Support Release` ou `LTS` à cette adresse :
@@ -56,6 +59,8 @@ Dupliquez `.env` que vous renommez en `.env.local`, puis supprimez la APP_SECRET
     APP_SECRET=nothing
     ###< symfony/framework-bundle ###
 
+* [Retour au menu](#menu)
+
 ### Lancement du serveur
 
 Pour que https soit activé en local :
@@ -78,6 +83,8 @@ Pour la sécurité il est toujours intéressant de la tester avec un :
 
     composer update
 
+* [Retour au menu](#menu)
+
 ## Vue sur les makers
 
 Pour afficher les makers de base :
@@ -87,3 +94,5 @@ Pour afficher les makers de base :
     symfony console list make
 
 Ils permettent d'exécuter des commandes rapidement
+
+* [Retour au menu](#menu)
