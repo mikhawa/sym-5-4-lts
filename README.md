@@ -1,5 +1,10 @@
 # sym-5-4-lts
 
+* [Installation](#installation)
+    * [Chargement du fichier binaire](#chargement-du-fichier-binaire)
+    * [Environnement](#environnement)
+    * [Création du projet](#création-du-projet)
+
 ## Installation
 
 Installation de la dernière version de `Symfony LTS` en date du `2023-03-07` sous Windows avec Wamp
@@ -46,7 +51,16 @@ puis accédez au dossier
 
 Dupliquez `.env` que vous renommez en `.env.local`, puis supprimez la APP_SECRET de `.env` (pas d'envoi via git)
 
+    ###> symfony/framework-bundle ###
+    APP_ENV=dev
+    APP_SECRET=nothing
+    ###< symfony/framework-bundle ###
+
 ### Lancement du serveur
+
+Pour que https soit activé en local :
+
+    symfony server:ca:install
 
 Dans le dossier du projet :
 
@@ -63,3 +77,13 @@ Pour la sécurité il est toujours intéressant de la tester avec un :
         et / ou un
 
     composer update
+
+## Vue sur les makers
+
+Pour afficher les makers de base :
+
+    php bin/console list make
+    # ou
+    symfony console list make
+
+Ils permettent d'exécuter des commandes rapidement
